@@ -1,5 +1,6 @@
 .devbox
-*terraform*
 .envrc
-
-
+**/.terraform/*
+*.tfplan
+tfplan
+*.tfvars
