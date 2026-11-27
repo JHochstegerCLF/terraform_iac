@@ -1,0 +1,111 @@
+{
+  "lockfile_version": "1",
+  "packages": {
+    "awscli@latest": {
+      "last_modified": "2026-10-02T22:55:44Z",
+      "resolved": "github:NixOS/nixpkgs/55ba7f49ef2962b42cbd126522b7df5f95037679#awscli",
+      "source": "devbox-search",
+      "version": "1.44.21",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/b12sj2rgrzwlhi7rfbagw72qq553ccrw-awscli-1.44.21",
+              "default": true
+            },
+            {
+              "name": "dist",
+              "path": "/nix/store/8zknhp70rax37f5ya85ck26w8fkz77j9-awscli-1.44.21-dist"
+            }
+          ],
+          "store_path": "/nix/store/b12sj2rgrzwlhi7rfbagw72qq553ccrw-awscli-1.44.21"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/zjidjhhndmz1kk9l73gbc8q6v9ymr715-awscli-1.44.21",
+              "default": true
+            },
+            {
+              "name": "dist",
+              "path": "/nix/store/cynzish4wlxby85gvdh7sz41zcqhd1dc-awscli-1.44.21-dist"
+            }
+          ],
+          "store_path": "/nix/store/zjidjhhndmz1kk9l73gbc8q6v9ymr715-awscli-1.44.21"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/jvxyza2mqwr3n2i8366kpm525j1ghk4r-awscli-1.44.21",
+              "default": true
+            },
+            {
+              "name": "dist",
+              "path": "/nix/store/a960ig8a1f1z2r6xy8fsgw4zd54a2ai6-awscli-1.44.21-dist"
+            }
+          ],
+          "store_path": "/nix/store/jvxyza2mqwr3n2i8366kpm525j1ghk4r-awscli-1.44.21"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/h52cgq15ib7mn1ixmfdgv1qbvvbn1vy0-awscli-1.44.21",
+              "default": true
+            },
+            {
+              "name": "dist",
+              "path": "/nix/store/792dc2k9qvn8a9mzzqa9nh4g9ysy3nra-awscli-1.44.21-dist"
+            }
+          ],
+          "store_path": "/nix/store/h52cgq15ib7mn1ixmfdgv1qbvvbn1vy0-awscli-1.44.21"
+        }
+      }
+    },
+    "github:NixOS/nixpkgs/nixpkgs-unstable": {
+      "last_modified": "2026-11-04T21:12:09Z",
+      "resolved": "github:NixOS/nixpkgs/6dadaf4375be35033e1c84395adbd53ff5fded96?lastModified=1793826729&narHash=sha256-D5H7H%2BqMoTGI%2FjJtxKP4u7BdjkFnUyhOovTrf3pTOr0%3D"
+    },
+    "terraform@latest": {
+      "last_modified": "2026-10-02T22:55:44Z",
+      "resolved": "github:NixOS/nixpkgs/55ba7f49ef2962b42cbd126522b7df5f95037679#terraform",
+      "source": "devbox-search",
+      "version": "1.16.4",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/7m9jga7psi7yzpcxghsvaf86dwzfxq35-terraform-1.16.4",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/7m9jga7psi7yzpcxghsvaf86dwzfxq35-terraform-1.16.4"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/iqh0a1445yzkjr810lkldhz38ivrx84d-terraform-1.16.4",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/iqh0a1445yzkjr810lkldhz38ivrx84d-terraform-1.16.4"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/56jkziqd2v5vxq24ajnrp9z86z313p2f-terraform-1.16.4",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/56jkziqd2v5vxq24ajnrp9z86z313p2f-terraform-1.16.4"
+        }
+      }
+    }
+  }
+}
