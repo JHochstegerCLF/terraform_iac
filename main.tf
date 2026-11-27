@@ -106,10 +106,71 @@ resource "aws_instance" "demo1" {
   depends_on = [aws_eip.lb, aws_route_table_association.example]
 }
 
+resource "aws_network_interface" "ni2" {
+  subnet_id       = aws_subnet.main.id
+  private_ips     = ["10.0.0.51"]
+  security_groups = [aws_security_group.full-access.id]
+
+  tags = {
+    Name = "primary_network_interface_2"
+  }
+}
+
+resource "aws_instance" "demo2" {
+  ami           = data.aws_ami.ubuntu.id
+  instance_type = "t2.micro"
+  user_data     = file("script2.sh")
+  primary_network_interface {
+    network_interface_id = aws_network_interface.ni2.id
+  }
+
+  depends_on = [aws_eip.lb2, aws_route_table_association.example]
+}
+
 resource "aws_eip" "lb" {
   domain                    = "vpc"
   network_interface         = aws_network_interface.ni.id
   associate_with_private_ip = "10.0.0.50"
   depends_on                = [aws_internet_gateway.gw]
+}
+
+resource "aws_eip" "lb2" {
+  domain                    = "vpc"
+  network_interface         = aws_network_interface.ni2.id
+  associate_with_private_ip = "10.0.0.51"
+  depends_on                = [aws_internet_gateway.gw]
+}
+
+
+resource "aws_elb" "infc_elb" {
+  name            = "infc-terraform-elb"
+  subnets         = [aws_subnet.main.id]
+  security_groups = [aws_security_group.full-access.id]
+
+  listener {
+    instance_port     = 80
+    instance_protocol = "http"
+    lb_port           = 80
+    lb_protocol       = "http"
+  }
+
+
+
+  health_check {
+    healthy_threshold   = 2
+    unhealthy_threshold = 2
+    timeout             = 3
+    target              = "HTTP:80/"
+    interval            = 30
+  }
+
+  instances                   = [aws_instance.demo1.id, aws_instance.demo2.id]
+  idle_timeout                = 400
+  connection_draining         = true
+  connection_draining_timeout = 400
+
+  tags = {
+    Name = "infc-terraform-elb"
+  }
 }
 
