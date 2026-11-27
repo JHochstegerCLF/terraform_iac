@@ -9,6 +9,6 @@ output "instance_public_ip" {
 }
 
 output "elb_dns_name" {
-    value = aws_elb.bar.dns_name
+    value = aws_elb.infc_elb.dns_name
     description = "Load Balancer DNS Name"
 }
